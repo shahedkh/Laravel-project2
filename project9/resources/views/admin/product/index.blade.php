@@ -32,7 +32,7 @@
                     <tr class="border">
                         <td>{{ $item->id }}</td>
                         <td >{{ $item->name }}</td>
-                        <td >{{ $item->category->name }}</td>
+                        <td >{{ $item->cat_id }}</td>
                         <td >{{ $item->brief }}</td>
                         <td>{{ $item->description }}</td>
                         <td>
