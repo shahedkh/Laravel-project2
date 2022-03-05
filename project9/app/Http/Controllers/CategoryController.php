@@ -20,7 +20,7 @@ class CategoryController extends Controller
         $category = new Category();
         $category->name = $request->input('name');
         $category->save();
-        return redirect('/categories')->with('status' , "Category Added Successfully!!!");
+        return redirect('/categories');
     }
 
     public function edit($id){
@@ -32,13 +32,13 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->name = $request->input('name');
         $category->update();
-        return redirect('/categories')->with('success', 'Category Updated!');
+        return redirect('/categories');
     }
 
     public function destroy($id){
         $category = Category::find($id);
         Product::where("cat_id", "=", $id)->delete();
         $category->delete();
-        return redirect('/categories')->with('success', 'Deleted Successfully!');
+        return redirect('/categories');
     }
 }

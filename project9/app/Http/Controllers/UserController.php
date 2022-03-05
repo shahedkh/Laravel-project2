@@ -27,11 +27,10 @@ class UserController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
-        $user->role_as = $request->input('role_as') == True ? '1' : '0';
         $user->save();
 
-        return redirect('/users')->with('success', 'User Added Successfully!');
-    }
+        return redirect('/users');
+       }
 
     public function edit($id)
     {
@@ -46,14 +45,13 @@ class UserController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
-        $user->role_as = $request->input('role_as') == True ? '1' : '0';
         $user->update();
-        return redirect('/users')->with('success', 'User Updated!');
+        return redirect('/users');
     }
 
     public function destroy($id){
         $user = User::find($id);
         $user->delete();
-        return redirect('/users')->with('success', 'Deleted Successfully!');
+        return redirect('/users');
     }
 }

@@ -32,7 +32,7 @@ class ProductController extends Controller
         $product->stock = $request->input('stock');
         $product->image = $request->input('image');
         $product->save();
-        return redirect('/products')->with('status' , "product Added Successfully!!!");
+        return redirect('/products');
     }
 
     public function edit($id){
@@ -51,12 +51,12 @@ class ProductController extends Controller
         $product->stock = $request->input('stock');
         $product->image = $request->input('image');
         $product->update();
-        return redirect('/products')->with('success', 'product Updated!');
+        return redirect('/products');
     }
 
     public function destroy($id){
         $product = Product::find($id);
         $product->delete();
-        return redirect('/products')->with('success', 'Deleted Successfully!');
+        return redirect('/products');
     }
 }

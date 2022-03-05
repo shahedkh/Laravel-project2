@@ -1,11 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-@if ($message = session('success'))
-    <div class="alert alert-success">
-        {{ $message }}
-    </div>
-@endif
+
     <div class="card">
         <div class="card-header">
             <h1>Categories Page</h1>
